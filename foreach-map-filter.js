@@ -47,9 +47,10 @@ function showFirstAndLast(arr){
         let individualArray = [];
         individualArray.push(val.charAt(0));
         individualArray.push(val.charAt(val.length - 1));
-        
+        console.log(individualArray)
         let combinedString = individualArray.join('');
         newArr.push(combinedString);
+        console.log(newArr)
         individualArray = [];
         combinedString = '';
         
@@ -105,7 +106,12 @@ Examples:
     doubleValuesWithMap([1,-2,-3]) // [2,-4,-6]
 */
 
-function doubleValuesWithMap(arr) {}
+function doubleValuesWithMap(arr) {
+    let doubles = arr.map(function(val) {
+        return val * 2;
+    })
+    return doubles;
+}
 
 /*
 Write a function called valTimesIndex which accepts an array and returns a new array with each value multiplied by the index it is currently at in the array.
@@ -116,7 +122,10 @@ Examples:
 */
 
 function valTimesIndex(arr){
-    
+    let numTimesIndex = arr.map(function(val, index){
+        return val * index;
+    })
+    return numTimesIndex;
 }
 
 /*
@@ -127,7 +136,10 @@ Examples:
 */
 
 function extractKey(arr, key){
-    
+    let keyValsArr = arr.map(function(item){
+        return item[key];
+    })
+    return keyValsArr;
 }
 
 /*
@@ -138,7 +150,10 @@ Examples:
 */
 
 function extractFullName(arr){
-    
+    let fullName = arr.map(function(item){
+         return item.first.concat(" ", item.last)
+    })
+    return fullName;
 }
 
 /*
