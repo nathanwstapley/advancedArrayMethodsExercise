@@ -42,6 +42,8 @@ describe("#addKeyAndValue", function() {
   });
 });
 
+
+
 describe("#vowelCount", function() {
   it("returns an object with the keys as vowels and the values as the count", function() {
     expect(vowelCount("elie")).toEqual({ e: 2, i: 1 });

@@ -41,7 +41,20 @@ Examples:
 
 */
 function showFirstAndLast(arr){
+    let newArr = [];
     
+    arr.forEach(function(val){
+        let individualArray = [];
+        individualArray.push(val.charAt(0));
+        individualArray.push(val.charAt(val.length - 1));
+        
+        let combinedString = individualArray.join('');
+        newArr.push(combinedString);
+        individualArray = [];
+        combinedString = '';
+        
+    })
+    return newArr;
 }
 
 /*
@@ -54,7 +67,11 @@ Examples:
 
 */
 function addKeyAndValue(arr,key,value){
-    
+
+    arr.forEach(function(element){
+        element[key] = value;
+    })
+    return arr
 }
 
 /*
@@ -68,7 +85,16 @@ Examples:
     vowelCount('I Am awesome and so are you') // {i: 1, a: 4, e: 3, o: 3, u: 1};
 */
 function vowelCount(str){
-   
+   let newString = str.toLowerCase();
+   let newArr = newString.split("");
+   let newObj = {};
+
+   newArr.forEach(function(element){
+        if(element === "a" || element === "e" || element === "i" || element === "o" || element === "u"){
+            newObj[element] = (newObj[element] || 0) + 1;
+        }
+   })
+   return newObj;
 }
 
 /*
